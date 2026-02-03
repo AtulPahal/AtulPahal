@@ -1,4 +1,4 @@
-<h1 align="left">👋 Hi, I’m Atul!</h1> 
+<h1 align="left">👋 Hi, I’m Atul!</h1>
 
 
 <h2 align='left'>💻 Data Engineer | ML & Neural Networks Learner | Tech Explorer</h2>
