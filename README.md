@@ -1,4 +1,4 @@
-<h1 align="left">👋 Hi, I’m Atul!</h1>
+<h1 align="left">👋 Hi, I’m Atul!</h1> 
 
 <h2 align='left'>💻 Data Engineer | ML & Neural Networks Learner | Tech Explorer</h2>
 <p align='left'>I love building cool things, learning new tools, and experimenting with tech. From Machine Learning to Python scripts to automation, I enjoy figuring things out one line of code at a time.</p>
