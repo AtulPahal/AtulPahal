@@ -10,8 +10,8 @@
 
 <!-- START_WAKATIME -->
 ```txt
-Python          1 hrs              ██████████████░░░░░░░░░░░  56.1%
-Tensorflow      47 mins            ██████████░░░░░░░░░░░░░░░  43.9%
+Python          1 hrs 20 mins      █████████████░░░░░░░░░░░░  53.3%
+Javascript      1 hrs 10 mins      ███████████░░░░░░░░░░░░░░  46.7%
 ```
 <!-- END_WAKATIME -->
 
