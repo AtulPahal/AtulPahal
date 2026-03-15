@@ -7,6 +7,13 @@
 
 <br><h2 align='left'>💻 This week I spent my time on:</h2>
 
+
+<!-- START_WAKATIME -->
+```txt
+Python          1 hrs              ██████████████░░░░░░░░░░░  56.1%
+Tensorflow      47 mins            ██████████░░░░░░░░░░░░░░░  43.9%
+```
+<!-- END_WAKATIME -->
 ```txt
 Tensorflow      1 hrs              ██████████████░░░░░░░░░░░  57.1%
 Python          45 mins            ██████████▓░░░░░░░░░░░░░░  42.9%
