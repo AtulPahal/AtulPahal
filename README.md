@@ -14,11 +14,6 @@ Python          1 hrs              ██████████████░
 Tensorflow      47 mins            ██████████░░░░░░░░░░░░░░░  43.9%
 ```
 <!-- END_WAKATIME -->
-```txt
-Tensorflow      1 hrs              ██████████████░░░░░░░░░░░  57.1%
-Python          45 mins            ██████████▓░░░░░░░░░░░░░░  42.9%
-```
-
 
 
 <br><h2 align='left'>💻 I Code with :</h2>
