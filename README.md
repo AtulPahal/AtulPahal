@@ -10,8 +10,9 @@
 
 <!-- START_WAKATIME -->
 ```txt
-Python          1 hrs 20 mins      █████████████░░░░░░░░░░░░  53.3%
-Javascript      1 hrs 10 mins      ███████████░░░░░░░░░░░░░░  46.7%
+TensorFlow      1 hrs 45 mins      ██████████░░░░░░░░░░░░░░░  41.2%
+Python          1 hrs 30 mins      ████████░░░░░░░░░░░░░░░░░  35.3%
+Scikit-Learn    1 hrs              █████░░░░░░░░░░░░░░░░░░░░  23.5%
 ```
 <!-- END_WAKATIME -->
 
