@@ -3,20 +3,6 @@
 <h2 align='left'>💻 Data Engineer | ML & Neural Networks Learner | Tech Explorer</h2>
 <p align='left'>I love building cool things, learning new tools, and experimenting with tech. From Machine Learning to Python scripts to automation, I enjoy figuring things out one line of code at a time.</p>
 
-
-
-<br><h2 align='left'>💻 This week I spent my time on:</h2>
-
-
-<!-- START_WAKATIME -->
-```txt
-TensorFlow      1 hrs 45 mins      ██████████░░░░░░░░░░░░░░░  41.2%
-Python          1 hrs 30 mins      ████████░░░░░░░░░░░░░░░░░  35.3%
-Scikit-Learn    1 hrs              █████░░░░░░░░░░░░░░░░░░░░  23.5%
-```
-<!-- END_WAKATIME -->
-
-
 <br><h2 align='left'>💻 I Code with :</h2>
 
 <img align="right" height="210" src="https://media1.tenor.com/m/B4ZLUQgMYUoAAAAd/fang-yuan-reverend-insanity.gif"  />
