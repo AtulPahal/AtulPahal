@@ -5,6 +5,7 @@
         .accent { fill: #0066cc; }
         .green { fill: #28a745; }
         .yellow { fill: #b58900; }
+        .dots { fill: #b8b8b8; }
         .border { stroke: #e1e4e8; fill: #ffffff; stroke-width: 2; rx: 8; }
     </style>
     
@@ -25,19 +26,18 @@
         <text x="0" y="120" class="accent">     \___\  </text>
         
         <!-- System Metric Specs column -->
-        <text x="160" y="20"><tspan class="title">atul</tspan>@<tspan class="title">arch-box</tspan></text>
-        <text x="160" y="35" fill="#e1e4e8">-------------------</text>
+        <text x="160" y="20"><tspan class="title">atul</tspan>@<tspan class="title">arch-box</tspan> <tspan class="dots">----------------------------</tspan></text>
         
-        <text x="160" y="55"><tspan class="green">OS</tspan>: Arch Linux x86_64</text>
-        <text x="160" y="75"><tspan class="green">Host</tspan>: Apple M2 MacBook Air</text>
-        <text x="160" y="95"><tspan class="green">Kernel</tspan>: Linux 6.x-zen</text>
-        <text x="160" y="115"><tspan class="green">Shell</tspan>: zsh + Hyprland</text>
-        <text x="160" y="135"><tspan class="green">Editor</tspan>: Neovim (LazyVim)</text>
+        <text x="160" y="45"><tspan class="yellow">OS</tspan><tspan class="dots"> ........... </tspan>Arch Linux x86_64</text>
+        <text x="160" y="65"><tspan class="yellow">Host</tspan><tspan class="dots"> ...... </tspan>Apple M2 MacBook Air</text>
+        <text x="160" y="85"><tspan class="yellow">Kernel</tspan><tspan class="dots"> ........... </tspan>Linux 6.x-zen</text>
+        <text x="160" y="105"><tspan class="yellow">Shell</tspan><tspan class="dots"> ........... </tspan>zsh + Hyprland</text>
+        <text x="160" y="125"><tspan class="yellow">Editor</tspan><tspan class="dots"> ........ </tspan>Neovim (LazyVim)</text>
         
         <!-- Live GitHub statistics payload -->
-        <text x="160" y="170" class="yellow" font-weight="bold">[GitHub Metrics]</text>
-        <text x="160" y="190"><tspan class="accent">Repositories</tspan>: 13</text>
-        <text x="160" y="210"><tspan class="accent">Total Commits</tspan>: 227</text>
-        <text x="160" y="230"><tspan class="accent">Stars Earned </tspan>: 0 | <tspan class="accent">Followers</tspan>: 0</text>
+        <text x="160" y="155"><tspan class="dots">- </tspan><tspan class="title">GitHub Stats</tspan> <tspan class="dots">-----------------------------</tspan></text>
+        <text x="160" y="180"><tspan class="yellow">Repos</tspan><tspan class="dots"> ......... </tspan>13</text>
+        <text x="160" y="200"><tspan class="yellow">Commits</tspan><tspan class="dots"> ...... </tspan>227</text>
+        <text x="160" y="220"><tspan class="yellow">Stars</tspan><tspan class="dots"> ....... </tspan>0<tspan class="dots"> | </tspan><tspan class="yellow">Followers</tspan><tspan class="dots"> ... </tspan>0</text>
     </g>
 </svg>
