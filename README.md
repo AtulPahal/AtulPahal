@@ -1,8 +1,3 @@
-<h1 align="left">👋 Hi, I’m Atul!</h1> 
-
-<h2 align="left">🚀 AI & Machine Learning Engineer | Deep Learning & Automation | Tech Explorer</h2>
-<p align="left">I build machine learning architectures, deep learning models, and automated developer systems. From scaling neural networks to writing optimized Python workflows, I thrive on tweaking environments and making workflows seamless, one line of code at a time.</p>
-
 <!-- Automated Live Terminal Stats Card -->
 <div align="center">
   <picture>
