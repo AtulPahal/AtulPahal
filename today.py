@@ -332,15 +332,15 @@ def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib
     """
     tree = etree.parse(filename)
     root = tree.getroot()
-    justify_format(root, 'age_data', age_data, 48)  # 21 dots at SVGs default value length
-    justify_format(root, 'commit_data', commit_data, 24)  # 21 dots at "250" (3 chars)
-    justify_format(root, 'star_data', star_data, 14)  # 13 dots at "0" (1 char)
-    justify_format(root, 'repo_data', repo_data, 8)  # 6 dots at "13" (2 chars) — unchanged
-    justify_format(root, 'contrib_data', contrib_data)  # inline, no dots element
-    justify_format(root, 'follower_data', follower_data, 10)  # 9 dots at "0" (1 char)
-    justify_format(root, 'loc_data', loc_data[2], 22)  # 16 dots at "39,961" (6 chars)
-    justify_format(root, 'loc_add', loc_data[0])  # inline, no dots element
-    justify_format(root, 'loc_del', loc_data[1], 9)  # 0 dots at "1,365,581" (9 chars)
+    justify_format(root, 'age_data', age_data, 45)  # right-align at col 56 (key=Uptime len 6)
+    justify_format(root, 'commit_data', commit_data, 24)  # inline, 21 dots at "256"
+    justify_format(root, 'star_data', star_data, 9)  # right-aligned at col 56 in Repos line
+    justify_format(root, 'repo_data', repo_data, 8)  # inline, 6 dots at "13"
+    justify_format(root, 'contrib_data', contrib_data)  # inline, no dots
+    justify_format(root, 'follower_data', follower_data, 7)  # right-aligned at col 56 in Commits line
+    justify_format(root, 'loc_data', loc_data[2], 16)  # 10 dots at "39,970"
+    justify_format(root, 'loc_add', loc_data[0])  # inline, no dots
+    justify_format(root, 'loc_del', loc_data[1], 9)  # inline, 0 dots at "1,365,765"
     tree.write(filename, encoding='utf-8', xml_declaration=True)
 
 
