@@ -43,6 +43,13 @@ def fetch_github_stats(username, token):
         "stars": total_stars,
         "commits": total_commits
     }
+def format_field(label, value, width=16):
+    val_str = str(value)
+    dots_len = width - len(label) - len(val_str) - 2
+    if dots_len <= 0:
+        return label, " ", val_str
+    return label, "." * dots_len, val_str
+
 def generate_svg(stats, theme="dark"):
     if theme == "dark":
         bg = "#1a1b26"       # Tokyonight Dark Background
@@ -51,6 +58,7 @@ def generate_svg(stats, theme="dark"):
         green = "#9ece6a"    # Success Green
         yellow = "#e0af68"   # Info Yellow
         border = "#24283b"   # Element Border
+        dots = "#444b6a"     # Muted Dots
     else:
         bg = "#ffffff"       # Clean Light Background
         text = "#373b41"
@@ -58,6 +66,7 @@ def generate_svg(stats, theme="dark"):
         green = "#28a745"
         yellow = "#b58900"
         border = "#e1e4e8"
+        dots = "#b8b8b8"     # Muted Dots
 
     # Arch Linux stylized ASCII logo grid
     ascii_art = [
@@ -69,6 +78,17 @@ def generate_svg(stats, theme="dark"):
         "     \\___\\  "
     ]
     
+    os_field = format_field("OS", "Arch Linux x86_64", 32)
+    host_field = format_field("Host", "Apple M2 MacBook Air", 32)
+    kernel_field = format_field("Kernel", "Linux 6.x-zen", 32)
+    shell_field = format_field("Shell", "zsh + Hyprland", 32)
+    editor_field = format_field("Editor", "Neovim (LazyVim)", 32)
+    
+    repos_field = format_field("Repos", stats['repos'], 18)
+    commits_field = format_field("Commits", stats['commits'], 18)
+    stars_field = format_field("Stars", stats['stars'], 15)
+    followers_field = format_field("Followers", stats['followers'], 15)
+    
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
     <style>
         .terminal {{ font-family: monospace; font-size: 14px; fill: {text}; white-space: pre; }}
@@ -76,6 +96,7 @@ def generate_svg(stats, theme="dark"):
         .accent {{ fill: {accent}; }}
         .green {{ fill: {green}; }}
         .yellow {{ fill: {yellow}; }}
+        .dots {{ fill: {dots}; }}
         .border {{ stroke: {border}; fill: {bg}; stroke-width: 2; rx: 8; }}
     </style>
     
@@ -96,20 +117,19 @@ def generate_svg(stats, theme="dark"):
         <text x="0" y="120" class="accent">{ascii_art[5]}</text>
         
         <!-- System Metric Specs column -->
-        <text x="160" y="20"><tspan class="title">atul</tspan>@<tspan class="title">arch-box</tspan></text>
-        <text x="160" y="35" fill="{border}">-------------------</text>
+        <text x="160" y="20"><tspan class="title">atul</tspan>@<tspan class="title">arch-box</tspan> <tspan class="dots">----------------------------</tspan></text>
         
-        <text x="160" y="55"><tspan class="green">OS</tspan>: Arch Linux x86_64</text>
-        <text x="160" y="75"><tspan class="green">Host</tspan>: Apple M2 MacBook Air</text>
-        <text x="160" y="95"><tspan class="green">Kernel</tspan>: Linux 6.x-zen</text>
-        <text x="160" y="115"><tspan class="green">Shell</tspan>: zsh + Hyprland</text>
-        <text x="160" y="135"><tspan class="green">Editor</tspan>: Neovim (LazyVim)</text>
+        <text x="160" y="45"><tspan class="yellow">{os_field[0]}</tspan><tspan class="dots"> {os_field[1]} </tspan>{os_field[2]}</text>
+        <text x="160" y="65"><tspan class="yellow">{host_field[0]}</tspan><tspan class="dots"> {host_field[1]} </tspan>{host_field[2]}</text>
+        <text x="160" y="85"><tspan class="yellow">{kernel_field[0]}</tspan><tspan class="dots"> {kernel_field[1]} </tspan>{kernel_field[2]}</text>
+        <text x="160" y="105"><tspan class="yellow">{shell_field[0]}</tspan><tspan class="dots"> {shell_field[1]} </tspan>{shell_field[2]}</text>
+        <text x="160" y="125"><tspan class="yellow">{editor_field[0]}</tspan><tspan class="dots"> {editor_field[1]} </tspan>{editor_field[2]}</text>
         
         <!-- Live GitHub statistics payload -->
-        <text x="160" y="170" class="yellow" font-weight="bold">[GitHub Metrics]</text>
-        <text x="160" y="190"><tspan class="accent">Repositories</tspan>: {stats['repos']}</text>
-        <text x="160" y="210"><tspan class="accent">Total Commits</tspan>: {stats['commits']}</text>
-        <text x="160" y="230"><tspan class="accent">Stars Earned </tspan>: {stats['stars']} | <tspan class="accent">Followers</tspan>: {stats['followers']}</text>
+        <text x="160" y="155"><tspan class="dots">- </tspan><tspan class="title">GitHub Stats</tspan> <tspan class="dots">-----------------------------</tspan></text>
+        <text x="160" y="180"><tspan class="yellow">{repos_field[0]}</tspan><tspan class="dots"> {repos_field[1]} </tspan>{repos_field[2]}</text>
+        <text x="160" y="200"><tspan class="yellow">{commits_field[0]}</tspan><tspan class="dots"> {commits_field[1]} </tspan>{commits_field[2]}</text>
+        <text x="160" y="220"><tspan class="yellow">{stars_field[0]}</tspan><tspan class="dots"> {stars_field[1]} </tspan>{stars_field[2]}<tspan class="dots"> | </tspan><tspan class="yellow">{followers_field[0]}</tspan><tspan class="dots"> {followers_field[1]} </tspan>{followers_field[2]}</text>
     </g>
 </svg>
 """
