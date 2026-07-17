@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+    <style>
+        .terminal { font-family: monospace; font-size: 14px; fill: #a9b1d6; white-space: pre; }
+        .title { fill: #7aa2f7; font-weight: bold; }
+        .accent { fill: #7aa2f7; }
+        .green { fill: #9ece6a; }
+        .yellow { fill: #e0af68; }
+        .border { stroke: #24283b; fill: #1a1b26; stroke-width: 2; rx: 8; }
+    </style>
+    
+    <rect class="border" width="598" height="298" x="1" y="1" />
+    
+    <!-- Decorative Terminal Window Control Buttons -->
+    <circle cx="20" cy="20" r="6" fill="#ff5f56" />
+    <circle cx="40" cy="20" r="6" fill="#ffbd2e" />
+    <circle cx="60" cy="20" r="6" fill="#27c93f" />
+    
+    <g class="terminal" transform="translate(30, 60)" xml:space="preserve">
+        <!-- ASCII Grid column -->
+        <text x="0" y="20" class="accent">   /\       </text>
+        <text x="0" y="40" class="accent">  /  \      </text>
+        <text x="0" y="60" class="accent"> /\   \     </text>
+        <text x="0" y="80" class="accent">/__\   \    </text>
+        <text x="0" y="100" class="accent">    \   \   </text>
+        <text x="0" y="120" class="accent">     \___\  </text>
+        
+        <!-- System Metric Specs column -->
+        <text x="160" y="20"><tspan class="title">atul</tspan>@<tspan class="title">arch-box</tspan></text>
+        <text x="160" y="35" fill="#24283b">-------------------</text>
+        
+        <text x="160" y="55"><tspan class="green">OS</tspan>: Arch Linux x86_64</text>
+        <text x="160" y="75"><tspan class="green">Host</tspan>: Apple M2 MacBook Air</text>
+        <text x="160" y="95"><tspan class="green">Kernel</tspan>: Linux 6.x-zen</text>
+        <text x="160" y="115"><tspan class="green">Shell</tspan>: zsh + Hyprland</text>
+        <text x="160" y="135"><tspan class="green">Editor</tspan>: Neovim (LazyVim)</text>
+        
+        <!-- Live GitHub statistics payload -->
+        <text x="160" y="170" class="yellow" font-weight="bold">[GitHub Metrics]</text>
+        <text x="160" y="190"><tspan class="accent">Repositories</tspan>: 13</text>
+        <text x="160" y="210"><tspan class="accent">Total Commits</tspan>: 222</text>
+        <text x="160" y="230"><tspan class="accent">Stars Earned </tspan>: 0 | <tspan class="accent">Followers</tspan>: 0</text>
+    </g>
+</svg>
