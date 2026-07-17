@@ -1,10 +1,6 @@
-<!-- Automated Live Terminal Stats Card -->
-<div align="center">
-  <a href="https://github.com/AtulPahal/AtulPahal">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg?v=11">
-      <source media="(prefers-color-scheme: light)" srcset="light_mode.svg?v=11">
-      <img alt="Live Terminal Stats" src="dark_mode.svg?v=11">
-    </picture>
-  </a>
-</div>
+<a href="https://github.com/AtulPahal/AtulPahal">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AtulPahal/AtulPahal/main/dark_mode.svg">
+    <img alt="Atul Pahal's GitHub Profile README" src="https://raw.githubusercontent.com/AtulPahal/AtulPahal/main/light_mode.svg">
+  </picture>
+</a>
