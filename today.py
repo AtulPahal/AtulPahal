@@ -257,11 +257,15 @@ def cache_builder(edges, comment_size, force_cache, loc_add=0, loc_del=0):
     with open(filename, 'w') as f:
         f.writelines(cache_comment)
         f.writelines(data)
+    net_loc = 0
     for line in data:
         loc = line.split()
-        loc_add += int(loc[3])
-        loc_del += int(loc[4])
-    return [loc_add, loc_del, loc_add - loc_del, cached]
+        repo_add = int(loc[3])
+        repo_del = int(loc[4])
+        loc_add += repo_add
+        loc_del += repo_del
+        net_loc += max(0, repo_add - repo_del)
+    return [loc_add, loc_del, net_loc, cached]
 
 
 def flush_cache(edges, filename, comment_size):
