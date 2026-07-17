@@ -11,7 +11,6 @@
 
 <h2 align="left">💻 Tech Stack & Tooling</h2>
 
-<img align="right" height="195" src="https://media1.tenor.com/m/B4ZLUQgMYUoAAAAd/fang-yuan-reverend-insanity.gif" alt="Fang Yuan" />
 
 <div align="left">
   <!-- Core Languages -->
@@ -36,7 +35,6 @@
   <img src="https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white" height="30" alt="Anaconda" />
 </div>
 
-<br clear="both">
 <br>
 
 <h3 align="left">🔗 Connect With Me</h3>
