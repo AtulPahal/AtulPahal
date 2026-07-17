@@ -1,6 +1,6 @@
 <a href="https://github.com/AtulPahal/AtulPahal">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AtulPahal/AtulPahal/main/dark_mode.svg?v=15">
-    <img alt="Atul Pahal's GitHub Profile README" src="https://raw.githubusercontent.com/AtulPahal/AtulPahal/main/light_mode.svg?v=15">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AtulPahal/AtulPahal/main/dark_mode.svg?v=16">
+    <img alt="Atul Pahal's GitHub Profile README" src="https://raw.githubusercontent.com/AtulPahal/AtulPahal/main/light_mode.svg?v=16">
   </picture>
 </a>
