@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,8 +28,8 @@ jobs:
 
       - name: Run profile builder
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          USER_NAME: ${{ secrets.USER_NAME }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+          USER_NAME: ${{ github.repository_owner }}
         run: python today.py
 
       - name: Commit and Push changes
@@ -35,4 +37,4 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git diff-index --quiet HEAD || (git commit -m "Update profile statistics" && git push)
+          git diff-index --quiet HEAD || (git commit -m "Update profile statistics" && git pull --rebase origin main && git push)

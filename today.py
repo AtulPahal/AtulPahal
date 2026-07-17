@@ -1,28 +1,40 @@
 import os
 import requests
 
+def github_request(url, token, accept="application/vnd.github+json"):
+    headers = {
+        "Authorization": f"token {token}",
+        "Accept": accept,
+        "X-GitHub-Api-Version": "2022-11-28"
+    }
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()
+    return response.json()
+
 def fetch_github_stats(username, token):
-    headers = {"Authorization": f"token {token}"}
-    
     # 1. Fetch repositories and followers
     user_url = f"https://api.github.com/users/{username}"
-    user_data = requests.get(user_url, headers=headers).json()
+    user_data = github_request(user_url, token)
     public_repos = user_data.get("public_repos", 0)
     followers = user_data.get("followers", 0)
     
-    # 2. Total up all repository stars
-    repos_url = f"https://api.github.com/users/{username}/repos?per_page=100"
-    repos_data = requests.get(repos_url, headers=headers).json()
+    # 2. Total up all repository stars (handling pagination)
     total_stars = 0
-    if isinstance(repos_data, list):
+    page = 1
+    while True:
+        repos_url = f"https://api.github.com/users/{username}/repos?per_page=100&page={page}"
+        repos_data = github_request(repos_url, token)
+        if not repos_data or not isinstance(repos_data, list):
+            break
         for repo in repos_data:
             total_stars += repo.get("stargazers_count", 0)
+        if len(repos_data) < 100:
+            break
+        page += 1
             
     # 3. Fetch total commit contributions across all repositories
     search_url = f"https://api.github.com/search/commits?q=author:{username}"
-    search_headers = headers.copy()
-    search_headers["Accept"] = "application/vnd.github.v3+json"
-    search_data = requests.get(search_url, headers=search_headers).json()
+    search_data = github_request(search_url, token)
     total_commits = search_data.get("total_count", 0)
     
     return {
@@ -31,7 +43,6 @@ def fetch_github_stats(username, token):
         "stars": total_stars,
         "commits": total_commits
     }
-
 def generate_svg(stats, theme="dark"):
     if theme == "dark":
         bg = "#1a1b26"       # Tokyonight Dark Background
@@ -58,9 +69,9 @@ def generate_svg(stats, theme="dark"):
         "     \\___\\  "
     ]
     
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="600" height="270" viewBox="0 0 600 270">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
     <style>
-        .terminal {{ font-family: monospace; font-size: 14px; fill: {text}; }}
+        .terminal {{ font-family: monospace; font-size: 14px; fill: {text}; white-space: pre; }}
         .title {{ fill: {accent}; font-weight: bold; }}
         .accent {{ fill: {accent}; }}
         .green {{ fill: {green}; }}
@@ -68,14 +79,14 @@ def generate_svg(stats, theme="dark"):
         .border {{ stroke: {border}; fill: {bg}; stroke-width: 2; rx: 8; }}
     </style>
     
-    <rect class="border" width="598" height="268" x="1" y="1" />
+    <rect class="border" width="598" height="298" x="1" y="1" />
     
     <!-- Decorative Terminal Window Control Buttons -->
     <circle cx="20" cy="20" r="6" fill="#ff5f56" />
     <circle cx="40" cy="20" r="6" fill="#ffbd2e" />
     <circle cx="60" cy="20" r="6" fill="#27c93f" />
     
-    <g class="terminal" transform="translate(30, 60)">
+    <g class="terminal" transform="translate(30, 60)" xml:space="preserve">
         <!-- ASCII Grid column -->
         <text x="0" y="20" class="accent">{ascii_art[0]}</text>
         <text x="0" y="40" class="accent">{ascii_art[1]}</text>
@@ -104,12 +115,14 @@ def generate_svg(stats, theme="dark"):
 """
 
 def main():
-    token = os.environ.get("ACCESS_TOKEN")
-    username = os.environ.get("USER_NAME", "AtulPahal")
+    token = (os.environ.get("ACCESS_TOKEN", "").strip() or 
+             os.environ.get("GITHUB_TOKEN", "").strip())
+    username = os.environ.get("USER_NAME", "").strip() or "AtulPahal"
     
     if not token:
-        print("Missing ACCESS_TOKEN secret mapping.")
-        return
+        print("Error: Missing ACCESS_TOKEN or GITHUB_TOKEN environment variable.")
+        import sys
+        sys.exit(1)
         
     try:
         stats = fetch_github_stats(username, token)
@@ -123,6 +136,7 @@ def main():
         print("Profile graphics generated cleanly.")
     except Exception as e:
         print(f"Execution failure: {e}")
-
+        import sys
+        sys.exit(1)
 if __name__ == "__main__":
     main()
