@@ -7,6 +7,8 @@
   </picture>
 </div>
 
+---
+
 ### 🎮 Contribution Graph
 
 <picture>
