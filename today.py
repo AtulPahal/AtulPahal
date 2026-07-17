@@ -332,14 +332,13 @@ def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib
     """
     tree = etree.parse(filename)
     root = tree.getroot()
-    justify_format(root, 'age_data', age_data, 45)  # right-align at col 56 (key=Uptime len 6)
+    justify_format(root, 'age_data', age_data, 45)  # right-align at col 56
     justify_format(root, 'commit_data', commit_data, 24)  # inline, 21 dots at "256"
-    justify_format(root, 'star_data', star_data, 9)  # right-aligned at col 56 in Repos line
+    justify_format(root, 'star_data', star_data, 9)  # 8 dots at "0"
     justify_format(root, 'repo_data', repo_data, 8)  # inline, 6 dots at "13"
     justify_format(root, 'contrib_data', contrib_data)  # inline, no dots
-    justify_format(root, 'follower_data', follower_data, 7)  # right-aligned at col 56 in Commits line
-    justify_format(root, 'loc_data', loc_data[2], 16)  # 10 dots at "39,970"
-    justify_format(root, 'loc_add', loc_data[0])  # inline, no dots
+    justify_format(root, 'follower_data', follower_data, 5)  # 4 dots at "0" — right-align at 56
+    justify_format(root, 'loc_data', loc_data[2], 12)  # 6 dots at "39,970" — line ends at 56
     justify_format(root, 'loc_del', loc_data[1], 9)  # inline, 0 dots at "1,365,765"
     tree.write(filename, encoding='utf-8', xml_declaration=True)
 
@@ -464,9 +463,8 @@ if __name__ == '__main__':
     user_data, user_time = perf_counter(user_getter, USER_NAME)
     OWNER_ID, acc_date = user_data
     formatter('account data', user_time)
-    age_data, age_time = perf_counter(daily_readme, datetime.datetime(2002, 7, 5))
+    age_data, age_time = perf_counter(daily_readme, datetime.datetime(2004, 7, 19))
     formatter('age calculation', age_time)
-    total_loc, loc_time = perf_counter(loc_query, ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'], 7)
     formatter('LOC (cached)', loc_time) if total_loc[-1] else formatter('LOC (no cache)', loc_time)
     commit_data, commit_time = perf_counter(commit_counter, 7)
     star_data, star_time = perf_counter(graph_repos_stars, 'stars', ['OWNER'])
