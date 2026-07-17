@@ -1,43 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
-    <style>
-        .terminal { font-family: monospace; font-size: 14px; fill: #373b41; white-space: pre; }
-        .title { fill: #0066cc; font-weight: bold; }
-        .accent { fill: #0066cc; }
-        .green { fill: #28a745; }
-        .yellow { fill: #b58900; }
-        .dots { fill: #b8b8b8; }
-        .border { stroke: #e1e4e8; fill: #ffffff; stroke-width: 2; rx: 8; }
-    </style>
-    
-    <rect class="border" width="598" height="298" x="1" y="1" />
-    
-    <!-- Decorative Terminal Window Control Buttons -->
-    <circle cx="20" cy="20" r="6" fill="#ff5f56" />
-    <circle cx="40" cy="20" r="6" fill="#ffbd2e" />
-    <circle cx="60" cy="20" r="6" fill="#27c93f" />
-    
-    <g class="terminal" transform="translate(30, 60)" xml:space="preserve">
-        <!-- ASCII Grid column -->
-        <text x="0" y="20" class="accent">   /\       </text>
-        <text x="0" y="40" class="accent">  /  \      </text>
-        <text x="0" y="60" class="accent"> /\   \     </text>
-        <text x="0" y="80" class="accent">/__\   \    </text>
-        <text x="0" y="100" class="accent">    \   \   </text>
-        <text x="0" y="120" class="accent">     \___\  </text>
-        
-        <!-- System Metric Specs column -->
-        <text x="160" y="20"><tspan class="title">atul</tspan>@<tspan class="title">arch-box</tspan> <tspan class="dots">----------------------------</tspan></text>
-        
-        <text x="160" y="45"><tspan class="yellow">OS</tspan><tspan class="dots"> ........... </tspan>Arch Linux x86_64</text>
-        <text x="160" y="65"><tspan class="yellow">Host</tspan><tspan class="dots"> ...... </tspan>Apple M2 MacBook Air</text>
-        <text x="160" y="85"><tspan class="yellow">Kernel</tspan><tspan class="dots"> ........... </tspan>Linux 6.x-zen</text>
-        <text x="160" y="105"><tspan class="yellow">Shell</tspan><tspan class="dots"> ........... </tspan>zsh + Hyprland</text>
-        <text x="160" y="125"><tspan class="yellow">Editor</tspan><tspan class="dots"> ........ </tspan>Neovim (LazyVim)</text>
-        
-        <!-- Live GitHub statistics payload -->
-        <text x="160" y="155"><tspan class="dots">- </tspan><tspan class="title">GitHub Stats</tspan> <tspan class="dots">-----------------------------</tspan></text>
-        <text x="160" y="180"><tspan class="yellow">Repos</tspan><tspan class="dots"> ......... </tspan>13</text>
-        <text x="160" y="200"><tspan class="yellow">Commits</tspan><tspan class="dots"> ...... </tspan>227</text>
-        <text x="160" y="220"><tspan class="yellow">Stars</tspan><tspan class="dots"> ....... </tspan>0<tspan class="dots"> | </tspan><tspan class="yellow">Followers</tspan><tspan class="dots"> ... </tspan>0</text>
-    </g>
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="530px" font-size="16px">
+<style>
+@font-face {
+src: local('Consolas'), local('Consolas Bold');
+font-family: 'ConsolasFallback';
+font-display: swap;
+-webkit-size-adjust: 109%;
+size-adjust: 109%;
+}
+.key {fill: #953800;}
+.value {fill: #0a3069;}
+.addColor {fill: #1a7f37;}
+.delColor {fill: #cf222e;}
+.cc {fill: #c2cfde;}
+text, tspan {white-space: pre;}
+</style>
+<rect width="985px" height="530px" fill="#f6f8fa" rx="15"/>
+<text x="15" y="30" fill="#0066cc" class="ascii">
+<tspan x="15" y="30">                                            </tspan>
+<tspan x="15" y="50">                                            </tspan>
+<tspan x="15" y="70">                                            </tspan>
+<tspan x="15" y="90">                   -`                       </tspan>
+<tspan x="15" y="110">                  .o+`                      </tspan>
+<tspan x="15" y="130">                 `ooo/                      </tspan>
+<tspan x="15" y="150">                `+oooo:                     </tspan>
+<tspan x="15" y="170">               `+oooooo:                    </tspan>
+<tspan x="15" y="190">               -+oooooo+:                   </tspan>
+<tspan x="15" y="210">             `/:-:++oooo+:                  </tspan>
+<tspan x="15" y="230">            `/++++/+++++++:                 </tspan>
+<tspan x="15" y="250">           `/++++++++++++++:                </tspan>
+<tspan x="15" y="270">          `/+++oooooooo/`                   </tspan>
+<tspan x="15" y="290">         ./ooosssso++osssssso+`             </tspan>
+<tspan x="15" y="310">        .oossssso-````/ossssss+`            </tspan>
+<tspan x="15" y="330">       -osssssso.      :ssssssso.           </tspan>
+<tspan x="15" y="350">      :osssssss/        osssso+++.          </tspan>
+<tspan x="15" y="370">     /ossssssss/        +ssssooo/-          </tspan>
+<tspan x="15" y="390">   `/ossssso+/:-        -:/+osssso+-        </tspan>
+<tspan x="15" y="410">  `+sso+:-`                 `.-/+oso:       </tspan>
+<tspan x="15" y="430"> `++:.                           `-/+/      </tspan>
+<tspan x="15" y="450"> .`                                 `/      </tspan>
+<tspan x="15" y="470">                                            </tspan>
+<tspan x="15" y="490">                                            </tspan>
+<tspan x="15" y="510">                                            </tspan>
+</text>
+<text x="390" y="30" fill="#24292f">
+<tspan x="390" y="30">atulpahal@github</tspan> -——————————————————————————————————————————-—-
+<tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ........................ </tspan><tspan class="value">Arch Linux x86_64</tspan>
+<tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc" id="age_data_dots"> ...................... </tspan><tspan class="value" id="age_data">24 years, 0 months, 13 days</tspan>
+<tspan x="390" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">Apple M2 MacBook Air</tspan>
+<tspan x="390" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ........................... </tspan><tspan class="value">Linux 6.x-zen</tspan>
+<tspan x="390" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> .............................. </tspan><tspan class="value">Neovim (LazyVim), VSCode</tspan>
+<tspan x="390" y="150" class="cc">. </tspan>
+<tspan x="390" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">Python, JavaScript, HTML5/CSS3</tspan>
+<tspan x="390" y="190" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">Markdown, JSON, LaTeX, YAML</tspan>
+<tspan x="390" y="210" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">English</tspan>
+<tspan x="390" y="230" class="cc">. </tspan>
+<tspan x="390" y="250" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Software</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">Deep Learning, Neural Networks</tspan>
+<tspan x="390" y="270" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Hardware</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Apple M2 Silicon</tspan>
+<tspan x="390" y="310">- Contact</tspan> -——————————————————————————————————————————————-—-
+<tspan x="390" y="330" class="cc">. </tspan><tspan class="key">Email</tspan>.<tspan class="key">Personal</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value">atulpahal@gmail.com</tspan>
+<tspan x="390" y="350" class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">atul-pahal-1275aa371</tspan>
+<tspan x="390" y="370" class="cc">. </tspan><tspan class="key">Discord</tspan>:<tspan class="cc"> ..................................... </tspan><tspan class="value">atulpahal19</tspan>
+<tspan x="390" y="390" class="cc">. </tspan>
+<tspan x="390" y="410" class="cc">. </tspan>
+<tspan x="390" y="450">- GitHub Stats</tspan> -—————————————————————————————————————————-—-
+<tspan x="390" y="470" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc" id="repo_data_dots"> .... </tspan><tspan class="value" id="repo_data">13</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value" id="contrib_data">13</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="cc" id="star_data_dots"> ............. </tspan><tspan class="value" id="star_data">0</tspan>
+<tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc" id="commit_data_dots"> ..................... </tspan><tspan class="value" id="commit_data">0</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc" id="follower_data_dots"> ........ </tspan><tspan class="value" id="follower_data">15</tspan>
+<tspan x="390" y="510" class="cc">. </tspan><tspan class="key">Lines of Code on GitHub</tspan>:<tspan class="cc" id="loc_data_dots"> ........ </tspan><tspan class="value" id="loc_data">0</tspan> ( <tspan class="addColor" id="loc_add">0</tspan><tspan class="addColor">++</tspan>, <tspan id="loc_del_dots"> ...... </tspan><tspan class="delColor" id="loc_del">0</tspan><tspan class="delColor">--</tspan> )
+</text>
 </svg>
