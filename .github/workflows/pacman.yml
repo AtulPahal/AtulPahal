@@ -23,7 +23,7 @@ jobs:
           days_of_history: 180   # prevents OOM
 
       - name: Push pacman-contribution-graph.svg to the output branch
-        uses: crazy-max/ghaction-github-pages@v2.1.3
+        uses: crazy-max/ghaction-github-pages@v5
         with:
           target_branch: output
           build_dir: dist
