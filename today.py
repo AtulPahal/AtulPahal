@@ -325,6 +325,26 @@ def stars_counter(data):
     for node in data:
         if node and node.get('node') and node['node'].get('stargazers'):
             total_stars += node['node']['stargazers']['totalCount']
+
+    if total_stars == 0:
+        try:
+            page = 1
+            while True:
+                url = f"https://api.github.com/users/{USER_NAME}/repos?per_page=100&page={page}"
+                res = requests.get(url, headers=HEADERS)
+                if res.status_code == 200:
+                    repos = res.json()
+                    if not repos:
+                        break
+                    total_stars += sum(repo.get('stargazers_count', 0) for repo in repos if isinstance(repo, dict))
+                    if len(repos) < 100:
+                        break
+                    page += 1
+                else:
+                    break
+        except Exception:
+            pass
+
     return total_stars
 
 
