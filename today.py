@@ -321,8 +321,10 @@ def stars_counter(data):
     """
     Count total stars in repositories owned by me
     """
+    print(f"DEBUG: stars_counter data structure: {data}")
     total_stars = 0
     for node in data:
+        print(f"DEBUG: Processing node: {node}")
         if node and node.get('node') and node['node'].get('stargazers'):
             total_stars += node['node']['stargazers']['totalCount']
     return total_stars
